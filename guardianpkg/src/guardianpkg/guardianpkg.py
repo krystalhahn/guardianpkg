@@ -410,7 +410,7 @@ def search_hist(x, order='newest', page_size=50, lang='en'):
     return rdf
     return plot
 
-def search_plot_template(x, y, hue, order='newest', page_size=50, lang='en'):
+def search_plot_template(x, y, order='newest', page_size=50, lang='en'):
     """
     Creates a personalizable plot based on designated parameters.
     
@@ -463,8 +463,7 @@ def search_plot_template(x, y, hue, order='newest', page_size=50, lang='en'):
     
     x = rdf[x]
     y = rdf[y]
-    hue = rdf[hue]
-    sns.scatterplot(x, y, hue)
+    sns.scatterplot(x, y)
     
     return rdf
     return plt.show()
