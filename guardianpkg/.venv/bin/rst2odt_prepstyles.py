@@ -1,6 +1,6 @@
 #!/Users/krystalhahn/Documents/GitHub/guardianpkg/guardianpkg/.venv/bin/python
 
-# $Id: rst2odt_prepstyles.py 8932 2022-01-05 14:59:31Z milde $
+# $Id: rst2odt_prepstyles.py 8346 2019-08-26 12:11:32Z milde $
 # Author: Dave Kuhlman <dkuhlman@rexx.com>
 # Copyright: This module has been placed in the public domain.
 
@@ -10,6 +10,8 @@ specifications from styles.xml in STYLE_FILE.odt.
 """
 
 # Author: Michael Schutte <michi@uiae.at>
+
+from __future__ import print_function
 
 from lxml import etree
 import sys
@@ -53,7 +55,7 @@ def prepstyle(filename):
 
 def main():
     args = sys.argv[1:]
-    if len(args) != 1 or args[0] in ('-h', '--help'):
+    if len(args) != 1:
         print(__doc__, file=sys.stderr)
         print("Usage: %s STYLE_FILE.odt\n" % sys.argv[0], file=sys.stderr)
         sys.exit(1)

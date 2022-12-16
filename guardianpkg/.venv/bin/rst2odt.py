@@ -1,6 +1,6 @@
 #!/Users/krystalhahn/Documents/GitHub/guardianpkg/guardianpkg/.venv/bin/python
 
-# $Id: rst2odt.py 8994 2022-01-29 16:28:17Z milde $
+# $Id: rst2odt.py 5839 2009-01-07 19:09:28Z dkuhlman $
 # Author: Dave Kuhlman <dkuhlman@rexx.com>
 # Copyright: This module has been placed in the public domain.
 
@@ -8,6 +8,7 @@
 A front end to the Docutils Publisher, producing OpenOffice documents.
 """
 
+import sys
 try:
     import locale
     locale.setlocale(locale.LC_ALL, '')
@@ -25,4 +26,5 @@ description = ('Generates OpenDocument/OpenOffice/ODF documents from '
 writer = Writer()
 reader = Reader()
 output = publish_cmdline_to_binary(reader=reader, writer=writer,
-                                   description=description)
+    description=description)
+

@@ -1,6 +1,6 @@
 #!/Users/krystalhahn/Documents/GitHub/guardianpkg/guardianpkg/.venv/bin/python
 
-# $Id: rst2latex.py 8956 2022-01-20 10:11:44Z milde $
+# $Id: rst2latex.py 5905 2009-04-16 12:04:49Z milde $
 # Author: David Goodger <goodger@python.org>
 # Copyright: This module has been placed in the public domain.
 
@@ -20,7 +20,7 @@ description = ('Generates LaTeX documents from standalone reStructuredText '
                'sources. '
                'Reads from <source> (default is stdin) and writes to '
                '<destination> (default is stdout).  See '
-               '<https://docutils.sourceforge.io/docs/user/latex.html> for '
+               '<http://docutils.sourceforge.net/docs/user/latex.html> for '
                'the full reference.')
 
 publish_cmdline(writer_name='latex', description=description)

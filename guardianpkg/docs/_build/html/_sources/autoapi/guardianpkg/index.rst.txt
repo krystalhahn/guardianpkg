@@ -1,0 +1,15 @@
+:py:mod:`guardianpkg`
+=====================
+
+.. py:module:: guardianpkg
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   guardianpkg/index.rst
+
+

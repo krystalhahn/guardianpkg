@@ -1,0 +1,271 @@
+:py:mod:`guardianpkg.guardianpkg`
+=================================
+
+.. py:module:: guardianpkg.guardianpkg
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   guardianpkg.guardianpkg.search
+   guardianpkg.guardianpkg.search_pages
+   guardianpkg.guardianpkg.tags
+   guardianpkg.guardianpkg.section
+   guardianpkg.guardianpkg.edition
+   guardianpkg.guardianpkg.item_url
+   guardianpkg.guardianpkg.single_item_mult
+   guardianpkg.guardianpkg.single_item
+   guardianpkg.guardianpkg.search_hist
+   guardianpkg.guardianpkg.search_plot_template
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   guardianpkg.guardianpkg.key
+
+
+.. py:data:: key
+   :annotation: = c010d0a2-346c-417a-abff-e051f66dddb1
+
+   
+
+.. py:function:: search(keyword, page=1, order='newest', page_size=50, lang='en')
+
+   Searches for results based on keyword and other designated parameters.
+
+   :param keyword: A string for the keyword you want to search.
+   :type keyword: str
+   :param page: An integer for which page to search from.
+   :type page: int
+   :param order: A string for how results should be ordered ('newest', 'oldest', 'relevance').
+   :type order: str
+   :param page_size: An integer for how many results should show up on each page.
+   :type page_size: int
+   :param lang: A string for which language results should be in, using ISO language codes.
+   :type lang: str
+
+   :returns: The new pandas dataframe showing the title, section, date, and type of the results.
+   :rtype: pandas.core.frame.DataFrame
+
+   .. rubric:: Examples
+
+   >>> from guardianpkg import guardianpkg
+   >>> guardianpkg.search('sport')
+   >>> Output is dataframe with 50 most recent results with the keyword 'sport'
+   >>> Refer to .ipynb file for example output
+
+
+.. py:function:: search_pages(keyword, pages=100, order='newest', page_size=50, lang='en')
+
+   Searches for results based on keyword and other designated parameters, looping over multiple pages.
+
+   :param keyword: A string for the keyword you want to search.
+   :type keyword: str
+   :param pages: An integer for how many pages to search from.
+   :type pages: int
+   :param order: A string for how results should be ordered ('newest', 'oldest', 'relevance').
+   :type order: str
+   :param page_size: An integer for how many results should show up on each page.
+   :type page_size: int
+   :param lang: A string for which language results should be in, using ISO language codes.
+   :type lang: str
+
+   :returns: The new pandas dataframe showing the title, section, date, and type of the results.
+   :rtype: pandas.core.frame.DataFrame
+
+   .. rubric:: Examples
+
+   >>> from guardianpkg import guardianpkg
+   >>> guardianpkg.search_pages('book')
+   >>> Output is dataframe most recent results with the keyword 'book' for 99 pages.
+   >>> Refer to .ipynb file for example output
+
+
+.. py:function:: tags(tag_text, page=1, page_size=50)
+
+   Searches for all tags based on designated parameters.
+
+   :param tag_text: A string for the included text for tags you want to search.
+   :type tag_text: str
+   :param page: An integer for which page to search from.
+   :type page: int
+   :param page_size: An integer for how many results should show up on each page.
+   :type page_size: int
+
+   :returns: The new pandas dataframe showing the name and type of the tag results.
+   :rtype: pandas.core.frame.DataFrame
+
+   .. rubric:: Examples
+
+   >>> from guardianpkg import guardianpkg
+   >>> guardianpkg.tags('liverpool')
+   >>> Output is dataframe with tag results for 'liverpool'
+   >>> Refer to .ipynb file for example output
+
+
+.. py:function:: section(section_text, page=1, page_size=50)
+
+   Searches for all sections based on designated parameters.
+
+   :param section_text: A string for included text for the sections you want to search.
+   :type section_text: str
+   :param page: An integer for which page to search from.
+   :type page: int
+   :param page_size: An integer for how many results should show up on each page.
+   :type page_size: int
+
+   :returns: The new pandas dataframe showing the name and type of the section results.
+   :rtype: pandas.core.frame.DataFrame
+
+   .. rubric:: Examples
+
+   >>> from guardianpkg import guardianpkg
+   >>> guardianpkg.section('liverpool')
+   >>> Output is dataframe with results with the tag including 'liverpool'
+   >>> Refer to .ipynb file for example output
+
+
+.. py:function:: edition(edition_text)
+
+   Searches for all editions based on designated parameters.
+
+   :param edition_text: A string for included text for the edition you want to search.
+   :type edition_text: str
+   :param page: An integer for which page to search from.
+   :type page: int
+   :param page_size: An integer for how many results should show up on each page.
+   :type page_size: int
+
+   :returns: The new pandas dataframe showing the name and type of the edition results.
+   :rtype: pandas.core.frame.DataFrame
+
+   .. rubric:: Examples
+
+   >>> from guardianpkg import guardianpkg
+   >>> guardianpkg.edition('uk')
+   >>> Output is dataframe with results with the edition including 'uk'
+   >>> Refer to .ipynb file for example output
+
+
+.. py:function:: item_url(keyword, page=1, order='newest', page_size=50, lang='en')
+
+   Searches for API url for a result based on the designated parameters.
+
+   :param keyword: A string for the keyword you want to search.
+   :type keyword: str
+   :param page: An integer for which page to search from.
+   :type page: int
+   :param order: A string for how results should be ordered ('newest', 'oldest', 'relevance').
+   :type order: str
+   :param page_size: An integer for how many results should show up on each page.
+   :type page_size: int
+   :param lang: A string for which language results should be in, using ISO language codes.
+   :type lang: str
+
+   :returns: The string for the API url of the result.
+   :rtype: str
+
+   .. rubric:: Examples
+
+   >>> from guardianpkg import guardianpkg
+   >>> guardianpkg.item_url('film')
+   'https://content.guardianapis.com/film/2022/dec/15/obituaries-2022-olivia-newton-john-remembered-by-didi-conn-frenchy-sandy-grease'
+
+
+.. py:function:: single_item_mult(api_url)
+
+   Searches for a single result for an API url.
+
+   :param api_url: A string for the API url for the result you want to search for.
+   :type api_url: str
+
+   :returns: The resulting string including the title, section, date, and type of the result.
+   :rtype: str
+
+   .. rubric:: Examples
+
+   >>> from guardianpkg import guardianpkg
+   >>> guardianpkg.single_item_mult('https://content.guardianapis.com/film/2022/dec/15/best-films-of-2022-in-the-uk-no-7-rrr')
+   Title: Best films of 2022 in the UK: No 7 – RRR
+   Section: Film
+   Date: 2022-12-15T06:00:14Z
+   Type: article
+
+
+.. py:function:: single_item(api_url)
+
+   Searches for result title based on API url.
+
+   :param api_url: A string for API url you want to search.
+   :type api_url: str
+
+   :returns: The string for the title of the result.
+   :rtype: str
+
+   .. rubric:: Examples
+
+   >>> from guardianpkg import guardianpkg
+   >>> guardianpkg.single_item('https://content.guardianapis.com/film/2022/dec/15/obituaries-2022-olivia-newton-john-remembered-by-didi-conn-frenchy-sandy-grease')
+   'Olivia Newton-John remembered by Didi Conn'
+
+
+.. py:function:: search_hist(x, order='newest', page_size=50, lang='en')
+
+   Creates histogram to look at either types or pillars of results based on designated parameters.
+
+   :param x: A string for which column of the search dataframe to plot (either 'type' or 'pillar').
+   :type x: str
+   :param order: A string for how results should be ordered ('newest', 'oldest', 'relevance').
+   :type order: str
+   :param page_size: An integer for how many results should show up on each page.
+   :type page_size: int
+   :param lang: A string for which language results should be in, using ISO language codes.
+   :type lang: str
+
+   :returns: * *pandas.core.frame.DataFrame* -- The new pandas dataframe showing the name, section, date, type, and pillar of the results.
+             * *matplotlib.axes._subplots.AxesSubplot* -- A histogram showing distribution of designated variable among results.
+
+   .. rubric:: Examples
+
+   >>> from guardianpkg import guardianpkg
+   >>> guardianpkg.search_hist('pillar')
+   >>> Output is dataframe with recent results and histogram showing distribution of pillars among these results.
+   >>> Refer to .ipynb file for example output
+
+
+.. py:function:: search_plot_template(x, y, hue, order='newest', page_size=50, lang='en')
+
+   Creates a personalizable plot based on designated parameters.
+
+   :param x: A string for the variable you want on the x-axis.
+   :type x: str
+   :param y: A string for the variable you want on the y-axis.
+   :type y: str
+   :param hue: A string for the variable you want for color-coding the points.
+   :type hue: str
+   :param page_size: An integer for how many results should show up on each page.
+   :type page_size: int
+   :param lang: A string for which language results should be in, using ISO language codes.
+   :type lang: str
+
+   :returns: * *pandas.core.frame.DataFrame* -- The new pandas dataframe showing the name, section, date, and type of the results.
+             * *matplotlib.axes._subplots.AxesSubplot* -- A scatterplot showing distribution of designated variables among results.
+
+   .. rubric:: Examples
+
+   >>> from guardianpkg import guardianpkg
+   >>> guardianpkg.search_plot_template('date', 'section', 'type')
+   >>> Output is dataframe with recent results and scatterplot showing date, section, and type among these results.
+   >>> Refer to .ipynb file for example output
+
+
