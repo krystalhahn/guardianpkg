@@ -35,8 +35,8 @@ def search(keyword, page=1, order='newest', page_size=50, lang='en'):
     --------
     >>> from guardianpkg import guardianpkg
     >>> guardianpkg.search('sport')
-    >>> Output is dataframe with 50 most recent results with the keyword 'sport'
-    >>> Refer to .ipynb file for example output
+    Output: Dataframe with 50 most recent results with the keyword 'sport'
+    (Refer to .ipynb file for example output)
     """
     params = {'api-key':key, 
               'q':keyword, 
@@ -86,8 +86,8 @@ def search_pages(keyword, pages=100, order='newest', page_size=50, lang='en'):
     --------
     >>> from guardianpkg import guardianpkg
     >>> guardianpkg.search_pages('book')
-    >>> Output is dataframe most recent results with the keyword 'book' for 99 pages.
-    >>> Refer to .ipynb file for example output
+    Output: Dataframe most recent results with the keyword 'book' for 99 pages.
+    (Refer to .ipynb file for example output)
     """
     allr =[]
     for i in range(1, pages):
@@ -136,8 +136,8 @@ def tags(tag_text, page=1, page_size=50):
     --------
     >>> from guardianpkg import guardianpkg
     >>> guardianpkg.tags('liverpool')
-    >>> Output is dataframe with tag results for 'liverpool'
-    >>> Refer to .ipynb file for example output
+    Output: Dataframe with tag results for 'liverpool'
+    (Refer to .ipynb file for example output)
     """
     params = {'api-key':key, 
               'web-title':tag_text,
@@ -178,9 +178,9 @@ def section(section_text, page=1, page_size=50):
     Examples
     --------
     >>> from guardianpkg import guardianpkg
-    >>> guardianpkg.section('liverpool')
-    >>> Output is dataframe with results with the tag including 'liverpool'
-    >>> Refer to .ipynb file for example output
+    >>> guardianpkg.section('news')
+    Output: Dataframe with results with the section including 'news'
+    (Refer to .ipynb file for example output)
     """
     params = {'api-key':key, 
               'q':section_text, 
@@ -221,8 +221,8 @@ def edition(edition_text):
     --------
     >>> from guardianpkg import guardianpkg
     >>> guardianpkg.edition('uk')
-    >>> Output is dataframe with results with the edition including 'uk'
-    >>> Refer to .ipynb file for example output
+    Output: Dataframe with results with the edition including 'uk'
+    (Refer to .ipynb file for example output)
     """
     params = {'api-key':key, 
               'q':edition_text}
@@ -306,10 +306,10 @@ def single_item_mult(api_url):
     --------
     >>> from guardianpkg import guardianpkg
     >>> guardianpkg.single_item_mult('https://content.guardianapis.com/film/2022/dec/15/best-films-of-2022-in-the-uk-no-7-rrr')
-    Title: Best films of 2022 in the UK: No 7 – RRR 
+    'Title: Best films of 2022 in the UK: No 7 – RRR 
     Section: Film 
     Date: 2022-12-15T06:00:14Z 
-    Type: article
+    Type: article'
     """
     params = {'api-key':key,
              'id':api_url}
@@ -381,8 +381,8 @@ def search_hist(x, order='newest', page_size=50, lang='en'):
     --------
     >>> from guardianpkg import guardianpkg
     >>> guardianpkg.search_hist('pillar')
-    >>> Output is dataframe with recent results and histogram showing distribution of pillars among these results.
-    >>> Refer to .ipynb file for example output
+    Output: Dataframe with recent results and histogram showing distribution of pillars among these results.
+    (Refer to .ipynb file for example output)
     """
 
     params = {'api-key':key,
@@ -438,8 +438,8 @@ def search_plot_template(x, y, hue, order='newest', page_size=50, lang='en'):
     --------
     >>> from guardianpkg import guardianpkg
     >>> guardianpkg.search_plot_template('date', 'section', 'type')
-    >>> Output is dataframe with recent results and scatterplot showing date, section, and type among these results.
-    >>> Refer to .ipynb file for example output
+    Output: Dataframe with recent results and scatterplot showing date, section, and type among these results.
+    (Refer to .ipynb file for example output)
     """
 
     params = {'api-key':key,
