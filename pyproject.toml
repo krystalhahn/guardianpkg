@@ -5,6 +5,9 @@ description = "Python package that acquires data from The Guardian API and inclu
 authors = ["Krystal Hahn"]
 license = "MIT"
 readme = "README.md"
+documentation = "https://guardianpkg.readthedocs.io/"
+homepage = "https://github.com/krystalhahn/guardianpkg.git"
+repository = "https://github.com/krystalhahn/guardianpkg.git"
 
 [tool.poetry.dependencies]
 python = "^3.9"
