@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "guardianpkg"
-version = "0.1.0"
+version = "0.1.1"
 description = "Python package that acquires data from The Guardian API and includes functions that can seararch and plot results!"
 authors = ["Krystal Hahn"]
 license = "MIT"
