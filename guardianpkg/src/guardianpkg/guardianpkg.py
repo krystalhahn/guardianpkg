@@ -6,8 +6,7 @@ from json import dumps, loads
 from pandas import json_normalize
 from matplotlib import pyplot as plt
 import seaborn as sns
-
-key = 'c010d0a2-346c-417a-abff-e051f66dddb1'
+from api_key.py import key
 
 def search(keyword, page=1, order='newest', page_size=50, lang='en'):
     """
@@ -410,7 +409,7 @@ def search_hist(x, order='newest', page_size=50, lang='en'):
     return rdf
     return plot
 
-def search_plot_template(x, y, order='newest', page_size=50, lang='en'):
+def search_plot_template(x, y, hue, order='newest', page_size=50, lang='en'):
     """
     Creates a personalizable plot based on designated parameters.
     
@@ -461,9 +460,10 @@ def search_plot_template(x, y, order='newest', page_size=50, lang='en'):
     
     rdf = pd.DataFrame(rr)
     
-    x = rdf[x]
-    y = rdf[y]
-    sns.scatterplot(x, y)
+    x1 = rdf[x]
+    y1 = rdf[y]
+    hue1 = rdf[hue]
+    sns.scatterplot(x=x1, y=y1, hue=hue1)
     
     return rdf
     return plt.show()
