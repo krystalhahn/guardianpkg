@@ -357,12 +357,12 @@ def single_item(api_url):
 
 def search_hist(x, order='newest', page_size=50, lang='en'):
     """
-    Creates histogram to look at either types or pillars of results based on designated parameters.
+    Creates histogram to look at either types of results based on designated parameters.
     
     Parameters
     ----------
     x : str
-        A string for which column of the search dataframe to plot (either 'type' or 'pillar').
+        A string for which column of the search dataframe to plot.
     order: str
         A string for how results should be ordered ('newest', 'oldest', 'relevance').
     page_size: int
@@ -373,15 +373,15 @@ def search_hist(x, order='newest', page_size=50, lang='en'):
     Returns
     -------
     pandas.core.frame.DataFrame
-        The new pandas dataframe showing the name, section, date, type, and pillar of the results.
+        The new pandas dataframe showing the name, section, date, and type of the results.
     matplotlib.axes._subplots.AxesSubplot
         A histogram showing distribution of designated variable among results.
         
     Examples
     --------
     >>> from guardianpkg import guardianpkg
-    >>> guardianpkg.search_hist('pillar')
-    Output: Dataframe with recent results and histogram showing distribution of pillars among these results.
+    >>> guardianpkg.search_hist('type')
+    Output: Dataframe with recent results and histogram showing distribution of types among these results.
     (Refer to .ipynb file for example output)
     """
 
@@ -400,7 +400,6 @@ def search_hist(x, order='newest', page_size=50, lang='en'):
         result['section'] = r['sectionName']
         result['date'] = r['webPublicationDate']
         result['type'] = r['type']
-        result['pillar'] = r['pillarName']
         rr.append(result)
     
     rdf = pd.DataFrame(rr)
