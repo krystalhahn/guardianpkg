@@ -1,12 +1,13 @@
 import requests
 import pandas as pd
 import os
-from dotenv import load_dotenv
 import json
 from json import dumps, loads
 from pandas import json_normalize
 from matplotlib import pyplot as plt
 import seaborn as sns
+
+key = 'c010d0a2-346c-417a-abff-e051f66dddb1'
 
 def search(keyword, page=1, order='newest', page_size=50, lang='en'):
     """
