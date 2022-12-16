@@ -120,7 +120,7 @@
 <td><p>Searches for result title based on API url.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#guardianpkg.guardianpkg.search_hist" title="guardianpkg.guardianpkg.search_hist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">search_hist</span></code></a>(x[, order, page_size, lang])</p></td>
-<td><p>Creates histogram to look at either types or pillars of results based on designated parameters.</p></td>
+<td><p>Creates histogram to look at either types of results based on designated parameters.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#guardianpkg.guardianpkg.search_plot_template" title="guardianpkg.guardianpkg.search_plot_template"><code class="xref py py-obj docutils literal notranslate"><span class="pre">search_plot_template</span></code></a>(x, y, hue[, order, page_size, lang])</p></td>
 <td><p>Creates a personalizable plot based on designated parameters.</p></td>
@@ -371,11 +371,11 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="guardianpkg.guardianpkg.search_hist">
 <span class="sig-prename descclassname"><span class="pre">guardianpkg.guardianpkg.</span></span><span class="sig-name descname"><span class="pre">search_hist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'newest'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lang</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'en'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#guardianpkg.guardianpkg.search_hist" title="Permalink to this definition"></a></dt>
-<dd><p>Creates histogram to look at either types or pillars of results based on designated parameters.</p>
+<dd><p>Creates histogram to look at either types of results based on designated parameters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> (<em>str</em>) – A string for which column of the search dataframe to plot (either ‘type’ or ‘pillar’).</p></li>
+<li><p><strong>x</strong> (<em>str</em>) – A string for which column of the search dataframe to plot.</p></li>
 <li><p><strong>order</strong> (<em>str</em>) – A string for how results should be ordered (‘newest’, ‘oldest’, ‘relevance’).</p></li>
 <li><p><strong>page_size</strong> (<em>int</em>) – An integer for how many results should show up on each page.</p></li>
 <li><p><strong>lang</strong> (<em>str</em>) – A string for which language results should be in, using ISO language codes.</p></li>
@@ -383,7 +383,7 @@
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><ul class="simple">
-<li><p><em>pandas.core.frame.DataFrame</em> – The new pandas dataframe showing the name, section, date, type, and pillar of the results.</p></li>
+<li><p><em>pandas.core.frame.DataFrame</em> – The new pandas dataframe showing the name, section, date, and type of the results.</p></li>
 <li><p><em>matplotlib.axes._subplots.AxesSubplot</em> – A histogram showing distribution of designated variable among results.</p></li>
 </ul>
 </p>
@@ -391,8 +391,8 @@
 </dl>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">guardianpkg</span> <span class="kn">import</span> <span class="n">guardianpkg</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">guardianpkg</span><span class="o">.</span><span class="n">search_hist</span><span class="p">(</span><span class="s1">&#39;pillar&#39;</span><span class="p">)</span>
-<span class="go">Output: Dataframe with recent results and histogram showing distribution of pillars among these results.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">guardianpkg</span><span class="o">.</span><span class="n">search_hist</span><span class="p">(</span><span class="s1">&#39;type&#39;</span><span class="p">)</span>
+<span class="go">Output: Dataframe with recent results and histogram showing distribution of types among these results.</span>
 <span class="go">(Refer to .ipynb file for example output)</span>
 </pre></div>
 </div>

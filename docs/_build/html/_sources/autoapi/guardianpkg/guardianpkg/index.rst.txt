@@ -221,9 +221,9 @@ Attributes
 
 .. py:function:: search_hist(x, order='newest', page_size=50, lang='en')
 
-   Creates histogram to look at either types or pillars of results based on designated parameters.
+   Creates histogram to look at either types of results based on designated parameters.
 
-   :param x: A string for which column of the search dataframe to plot (either 'type' or 'pillar').
+   :param x: A string for which column of the search dataframe to plot.
    :type x: str
    :param order: A string for how results should be ordered ('newest', 'oldest', 'relevance').
    :type order: str
@@ -232,14 +232,14 @@ Attributes
    :param lang: A string for which language results should be in, using ISO language codes.
    :type lang: str
 
-   :returns: * *pandas.core.frame.DataFrame* -- The new pandas dataframe showing the name, section, date, type, and pillar of the results.
+   :returns: * *pandas.core.frame.DataFrame* -- The new pandas dataframe showing the name, section, date, and type of the results.
              * *matplotlib.axes._subplots.AxesSubplot* -- A histogram showing distribution of designated variable among results.
 
    .. rubric:: Examples
 
    >>> from guardianpkg import guardianpkg
-   >>> guardianpkg.search_hist('pillar')
-   Output: Dataframe with recent results and histogram showing distribution of pillars among these results.
+   >>> guardianpkg.search_hist('type')
+   Output: Dataframe with recent results and histogram showing distribution of types among these results.
    (Refer to .ipynb file for example output)
 
 
